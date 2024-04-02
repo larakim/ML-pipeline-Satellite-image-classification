@@ -1,0 +1,13 @@
+tensorflow
+pandas
+keras
+dvc
+mlflow
+notebook
+gdown
+tqdm
+ensure
+joblib
+Flask
+python-box
+-e .
