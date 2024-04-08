@@ -22,7 +22,7 @@ python script.py
 ```bash
 export MLFLOW_TRACKING_URI=https://dagshub.com/larakim/ML-pipeline-Satellite-image-classification.mlflow 
 
-export MLFLOW_TRACKING_USERNAME=larakim 
+export MLFLOW_TRACKING_USERNAME=yyyyyyyy 
 
-export MLFLOW_TRACKING_PASSWORD=6f0caff147881a6dd8d7169da2dc21273f023c6c 
+export MLFLOW_TRACKING_PASSWORD=XXXXXXXXXXXXXXXXXXXXXXXXX 
 ```
