@@ -11,3 +11,18 @@ Satellite Image Classification (link: https://www.kaggle.com/datasets/mahmoudred
 7. Update the pipeline
 8. Update the main.py
 9. Update the dvc.yaml
+
+
+## MLflow
+MLFLOW_TRACKING_URI=https://dagshub.com/larakim/ML-pipeline-Satellite-image-classification.mlflow \
+MLFLOW_TRACKING_USERNAME=larakim \
+MLFLOW_TRACKING_PASSWORD=6f0caff147881a6dd8d7169da2dc21273f023c6c \
+python script.py
+
+```bash
+export MLFLOW_TRACKING_URI=https://dagshub.com/larakim/ML-pipeline-Satellite-image-classification.mlflow 
+
+export MLFLOW_TRACKING_USERNAME=larakim 
+
+export MLFLOW_TRACKING_PASSWORD=6f0caff147881a6dd8d7169da2dc21273f023c6c 
+```

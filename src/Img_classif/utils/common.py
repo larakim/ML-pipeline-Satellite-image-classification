@@ -65,8 +65,8 @@ def save_json(filename: Path, data: dict):
     """
 
     try: 
-        with open(filename,'w'):
-            json.dump(filename,data)
+        with open(filename,'w') as f:
+            json.dump(data,f)
     except Exception as e:
         raise e
     

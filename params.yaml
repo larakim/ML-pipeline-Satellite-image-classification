@@ -1,1 +1,5 @@
-key: value
+img_size: (150,150,3)
+lr: 0.01
+classes: 4
+epochs: 1
+batch_size: 32
