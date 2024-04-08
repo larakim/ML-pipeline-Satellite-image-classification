@@ -1,11 +1,13 @@
 import keras
 from img_classif.config.configuration import PrepareBaseModelConfig
 from img_classif import logger
+from img_classif.utils.common import create_directories
 
 class PrepareBaseModel:
 
     def __init__(self,config:PrepareBaseModelConfig):
         self.config = config
+        create_directories([self.config.root_dir])
 
     def get_base_model(self):
         self.model = keras.applications.Xception(

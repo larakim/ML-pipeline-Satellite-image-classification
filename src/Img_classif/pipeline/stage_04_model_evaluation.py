@@ -11,13 +11,14 @@ class Modelevaluationpipeline():
     def __init__(self) -> None:
         pass
 
+
     def main(self):
         config = ConfigurationManager()
         config_eval = config.get_model_eval_conf()
         eval_model = Model_evaluation(config=config_eval)
         eval_model.validation_generator()
         eval_model.evaluation()
-        eval_model.log_into_mlflow()
+        # eval_model.log_into_mlflow()
 
 
 if __name__ == '__main__':

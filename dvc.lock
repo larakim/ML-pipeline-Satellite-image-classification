@@ -1,0 +1,103 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/img_classif/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: f4028efd894354522c713d79ae01d80c
+      size: 737
+    - path: src/img_classif/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 54498747d594a087ffadcdc62c2d1909
+      size: 836
+    outs:
+    - path: artifacts/data_ingestion/data
+      hash: md5
+      md5: 6235df41f778a89a1ba8731310165835.dir
+      size: 22579929
+      nfiles: 5631
+  prepare_base_model:
+    cmd: python src/img_classif/pipeline/stage_02_prepare_base_model.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: f4028efd894354522c713d79ae01d80c
+      size: 737
+    - path: src/img_classif/pipeline/stage_02_prepare_base_model.py
+      hash: md5
+      md5: 01f8cf1615f9762c06377276c5b50d1c
+      size: 851
+    params:
+      params.yaml:
+        classes: 4
+        img_size: (150,150,3)
+        lr: 0.01
+    outs:
+    - path: artifacts/base_model
+      hash: md5
+      md5: 71edc9e449f8521c84878a745fe99a50.dir
+      size: 83954978
+      nfiles: 1
+  training_model:
+    cmd: python src/img_classif/pipeline/stage_03_model_trainer.py
+    deps:
+    - path: artifacts/base_model
+      hash: md5
+      md5: 71edc9e449f8521c84878a745fe99a50.dir
+      size: 83954978
+      nfiles: 1
+    - path: artifacts/data_ingestion/data
+      hash: md5
+      md5: 6235df41f778a89a1ba8731310165835.dir
+      size: 22579929
+      nfiles: 5631
+    - path: config/config.yaml
+      hash: md5
+      md5: f4028efd894354522c713d79ae01d80c
+      size: 737
+    - path: src/img_classif/pipeline/stage_03_model_trainer.py
+      hash: md5
+      md5: 1826e473a2c01e8c237ee2da8c71cf1f
+      size: 778
+    params:
+      params.yaml:
+        batch_size: 32
+        epochs: 1
+        img_size: (150,150,3)
+    outs:
+    - path: artifacts/updated_model
+      hash: md5
+      md5: 54840f5de87427c3b00a10ec9431a13c.dir
+      size: 83834896
+      nfiles: 1
+  model_evaluation:
+    cmd: python src/img_classif/pipeline/stage_04_model_evaluation.py
+    deps:
+    - path: artifacts/data_ingestion/data
+      hash: md5
+      md5: 6235df41f778a89a1ba8731310165835.dir
+      size: 22579929
+      nfiles: 5631
+    - path: artifacts/updated_model
+      hash: md5
+      md5: 54840f5de87427c3b00a10ec9431a13c.dir
+      size: 83834896
+      nfiles: 1
+    - path: config/config.yaml
+      hash: md5
+      md5: f4028efd894354522c713d79ae01d80c
+      size: 737
+    - path: src/img_classif/pipeline/stage_04_model_evaluation.py
+      hash: md5
+      md5: 4c1579a62f58cededed04d12ccffdf1b
+      size: 884
+    params:
+      params.yaml:
+        batch_size: 32
+        img_size: (150,150,3)
+    outs:
+    - path: artifacts/model_evaluation/evaluation.json
+      hash: md5
+      md5: 50ec1b2f9c66b078c41d05ad3b8e91ac
+      size: 146

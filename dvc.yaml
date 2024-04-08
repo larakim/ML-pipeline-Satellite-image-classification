@@ -1,0 +1,48 @@
+stages:
+  data_ingestion:
+    cmd: python src/img_classif/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/img_classif/pipeline/stage_01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/data
+
+  prepare_base_model:
+    cmd: python src/img_classif/pipeline/stage_02_prepare_base_model.py
+    deps:
+      - src/img_classif/pipeline/stage_02_prepare_base_model.py
+      - config/config.yaml
+    params:
+      - img_size
+      - lr
+      - classes
+    outs:
+      - artifacts/base_model
+
+  training_model:
+    cmd: python src/img_classif/pipeline/stage_03_model_trainer.py
+    deps:
+      - src/img_classif/pipeline/stage_03_model_trainer.py
+      - config/config.yaml
+      - artifacts/base_model
+      - artifacts/data_ingestion/data
+    params:
+      - epochs
+      - batch_size
+      - img_size
+    outs:
+      - artifacts/updated_model
+
+  model_evaluation:
+    cmd: python src/img_classif/pipeline/stage_04_model_evaluation.py
+    deps:
+      - src/img_classif/pipeline/stage_04_model_evaluation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/data
+      - artifacts/updated_model
+    params:
+      - batch_size
+      - img_size
+    metrics:
+      - artifacts/model_evaluation/evaluation.json:
+          cache: false
