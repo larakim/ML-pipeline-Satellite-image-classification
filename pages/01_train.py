@@ -10,7 +10,7 @@ params = read_yaml(params_fn)
 
 with st.sidebar:
     st.header('CNN model training')
-    st.image('CNN_model.png')
+    st.image('/pages/CNN_model.png')
     st.subheader('Number of default epochs: ' + str(params.epochs))
 
 
