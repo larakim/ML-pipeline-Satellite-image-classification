@@ -10,4 +10,5 @@ ensure
 joblib
 Flask
 python-box
+streamlit
 -e .
