@@ -45,4 +45,4 @@ if __name__ == '__main__':
     model = Image_label_prediction()
     model.load_model_labels()
     predicted_label,proba = model.predict(img_path)
-    print(predicted_label + ' probability' + str(np.round(proba*100)))
+    print(predicted_label + ' probability: ' + str(np.round(proba)))
