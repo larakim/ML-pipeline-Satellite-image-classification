@@ -8,7 +8,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "ML-pipeline-Satellite-image-classification"
 AUTHOR_USER_NAME = "larakim"
-SRC_REPO = "Img_classif"
+SRC_REPO = "img_classif"
 # AUTHOR_EMAIL = "XX@gmail.com"
 
 
