@@ -1,7 +1,7 @@
-from img_classif.utils.common import read_yaml
-from img_classif.constants import *
-from img_classif.components.model_evaluation import Model_evaluation
-from img_classif.config.configuration import ConfigurationManager
+from Img_classif.utils.common import read_yaml
+from Img_classif.constants import *
+from Img_classif.components.model_evaluation import Model_evaluation
+from Img_classif.config.configuration import ConfigurationManager
 import keras
 import numpy as np
 

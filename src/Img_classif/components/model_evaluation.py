@@ -4,9 +4,9 @@ import numpy as np
 import mlflow
 import mlflow.keras
 from urllib.parse import urlparse
-from img_classif.utils.common import create_directories, save_json
+from Img_classif.utils.common import create_directories, save_json
 from pathlib import Path
-from img_classif.config.configuration import Modelevaluationconfig
+from Img_classif.config.configuration import Modelevaluationconfig
 
 class Model_evaluation():
 

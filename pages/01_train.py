@@ -1,5 +1,5 @@
 import streamlit as st
-from img_classif.utils.common import read_yaml
+from Img_classif.utils.common import read_yaml
 from pathlib import Path
 from app import Navbar
 import yaml

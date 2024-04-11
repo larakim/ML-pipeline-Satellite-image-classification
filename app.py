@@ -1,6 +1,6 @@
 import streamlit as st
 import warnings
-from img_classif.pipeline.prediction import Image_label_prediction
+from Img_classif.pipeline.prediction import Image_label_prediction
 import numpy as np
 warnings.filterwarnings('ignore')
 

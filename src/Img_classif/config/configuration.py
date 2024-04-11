@@ -1,6 +1,6 @@
-from img_classif.constants import *
-from img_classif.utils.common import create_directories, read_yaml
-from img_classif.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, Model_trainer_config, Modelevaluationconfig
+from Img_classif.constants import *
+from Img_classif.utils.common import create_directories, read_yaml
+from Img_classif.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, Model_trainer_config, Modelevaluationconfig
 
 class ConfigurationManager:
     def __init__(self, config_path = CONFIG_FILE_PATH,param_path = PARAMS_FILE_PATH):
