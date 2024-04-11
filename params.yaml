@@ -1,5 +1,5 @@
 batch_size: 32
 classes: 4
-epochs: 1
+epochs: 3
 img_size: (150,150,3)
 lr: 0.01

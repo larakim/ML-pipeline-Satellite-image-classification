@@ -32,7 +32,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True) # hide the CSS code fr
 
 with st.sidebar:
     st.header('Sattelite image classification')
-    st.image('/pagesimg_classif.jfif')
+    st.image('./pages/img_classif.jfif')
     st.subheader('Using advanced CNN model for satellite image classification')
 
 
