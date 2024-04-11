@@ -1,10 +1,10 @@
 import tensorflow as tf
-from img_classif import logger
+from Img_classif import logger
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau # type: ignore
 from sklearn.metrics import confusion_matrix, average_precision_score, recall_score, precision_score, accuracy_score, classification_report
-from img_classif.config.configuration import Model_trainer_config
-from img_classif.utils.common import read_yaml, create_directories
-from img_classif.constants import *
+from Img_classif.config.configuration import Model_trainer_config
+from Img_classif.utils.common import read_yaml, create_directories
+from Img_classif.constants import *
 
 class Modeltrainer:
     def __init__(self, config: Model_trainer_config):

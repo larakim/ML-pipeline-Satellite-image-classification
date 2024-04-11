@@ -1,7 +1,7 @@
 
-from img_classif.config.configuration import ConfigurationManager
-from img_classif import logger
-from img_classif.components.model_evaluation import Model_evaluation
+from Img_classif.config.configuration import ConfigurationManager
+from Img_classif import logger
+from Img_classif.components.model_evaluation import Model_evaluation
 
 
 STAGE_NAME = 'Model evaluation stage'

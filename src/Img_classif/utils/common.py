@@ -4,7 +4,7 @@ from ensure import ensure_annotations
 import yaml
 from pathlib import Path
 import joblib
-from img_classif import logger
+from Img_classif import logger
 from box.exceptions import BoxValueError
 from box import ConfigBox
 import base64

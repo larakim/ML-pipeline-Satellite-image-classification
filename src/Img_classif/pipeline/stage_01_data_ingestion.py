@@ -1,7 +1,7 @@
 
-from img_classif.components.data_ingestion import DataIngestion
-from img_classif.config.configuration import ConfigurationManager
-from img_classif import logger
+from Img_classif.components.data_ingestion import DataIngestion
+from Img_classif.config.configuration import ConfigurationManager
+from Img_classif import logger
 
 
 STAGE_NAME = 'Data ingestion stage'

@@ -1,7 +1,7 @@
 
-from img_classif.config.configuration import ConfigurationManager
-from img_classif import logger
-from img_classif.components.model_trainer import Modeltrainer
+from Img_classif.config.configuration import ConfigurationManager
+from Img_classif import logger
+from Img_classif.components.model_trainer import Modeltrainer
 
 
 STAGE_NAME = 'Model training stage'

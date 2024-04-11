@@ -1,7 +1,7 @@
 
-from img_classif.config.configuration import ConfigurationManager
-from img_classif import logger
-from img_classif.components.prepare_base_model import PrepareBaseModel
+from Img_classif.config.configuration import ConfigurationManager
+from Img_classif import logger
+from Img_classif.components.prepare_base_model import PrepareBaseModel
 
 
 STAGE_NAME = 'Base model preparation stage'

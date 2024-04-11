@@ -1,7 +1,7 @@
 import keras
-from img_classif.config.configuration import PrepareBaseModelConfig
-from img_classif import logger
-from img_classif.utils.common import create_directories
+from Img_classif.config.configuration import PrepareBaseModelConfig
+from Img_classif import logger
+from Img_classif.utils.common import create_directories
 
 class PrepareBaseModel:
 

@@ -15,9 +15,9 @@ class Image_label_prediction():
         config = ConfigurationManager()
         config_eval = config.get_model_eval_conf()
         eval_model = Model_evaluation(config=config_eval)
-        eval_model.validation_generator()
+        # eval_model.validation_generator()
         self.model = eval_model.load_model()
-        self.labels = eval_model.labels
+        self.labels = {0: 'cloudy', 1: 'desert', 2: 'green_area', 3: 'water'} #eval_model.labels
         self.img_size = eval_model.config.img_size
 
     def predict(self,img_path)->int:
@@ -41,7 +41,7 @@ class Image_label_prediction():
         return predicted_class,100*np.max(proba)
     
 if __name__ == '__main__':
-    img_path = 'artifacts/data_ingestion/data/desert/desert(8).jpg'
+    img_path = 'pages/desert(10).jpg'
     model = Image_label_prediction()
     model.load_model_labels()
     predicted_label,proba = model.predict(img_path)

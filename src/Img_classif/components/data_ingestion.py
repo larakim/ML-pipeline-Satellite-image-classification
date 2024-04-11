@@ -1,10 +1,10 @@
 
 import gdown
-from img_classif import logger
+from Img_classif import logger
 import zipfile
 import os
-from img_classif.utils.common import create_directories, read_yaml
-from img_classif.config.configuration import DataIngestionConfig
+from Img_classif.utils.common import create_directories, read_yaml
+from Img_classif.config.configuration import DataIngestionConfig
 
 class DataIngestion:
     def __init__(self,data_config:DataIngestionConfig):
