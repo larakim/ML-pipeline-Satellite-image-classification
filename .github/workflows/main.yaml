@@ -7,7 +7,12 @@ on:
     paths-ignore:
       - 'README.md'
 
-integration:
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  integration:
     name: Continuous Integration
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +24,6 @@ integration:
 
       - name: Run unit tests
         run: echo "Running unit tests"
-
 
   build-and-push-ecr-image:
     name: Continuous Delivery
@@ -57,8 +61,9 @@ integration:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-
-Continuous-Deployment:
+          
+          
+  Continuous-Deployment:
     needs: build-and-push-ecr-image
     runs-on: self-hosted
     steps:
